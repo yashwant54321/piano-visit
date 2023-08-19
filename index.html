@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+ <style>
+ 
+.piano{
+   width: 100%;
+   border: solid 2vw rgb(25, 21, 21);
+   background-color: white;
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 5vw;
+   margin-top: 5%;
+}
+@media (max-width:550px){
+  .piano{
+    margin-top: 15vw;
+  }
+}
+
+.black{
+ width: 5%;
+ height: 10vw;
+ background-color: black;
+ color: white;
+ text-align: center;
+ padding-top: 3vw;
+ font-size: 2vw;
+}
+h1{
+  font-weight: bold;
+  font-family: cursive;
+  margin-left:40%;
+  margin-top: 5%;
+  color: white;
+  font-size: 5vw;
+}
+@media (max-width:580px){
+  h1{
+    margin-top: 20%;
+  }
+}
+
+body{
+  background-color:skyblue;
+}
+@media (max-width:580px){
+  body{
+    padding: 0px 15px;
+  }
+}
+
+.bg{
+  background-image: url(https://cdn.wallpapersafari.com/79/13/MlqP1F.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+  </style>
+</head>
+
+<body class="bg">
+  <h1>🎹Piano🎹</h1>
+   <div class="container">
+   <div class="row">
+     <div class="col piano">
+         <button class="but black">Q</button>
+         <button class="but black">W</button>
+         <button class="but black">E</button>
+         <button class="but black">R</button>
+         <button class="but black">T</button>
+         <button class="but black">Y</button>
+         <button class="but black">U</button>
+         <button class="but black">I</button>
+         <button class="but black">O</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+let buttonsNo= document.querySelectorAll(".but").length;
+for (var i=0;i<buttonsNo; i++){
+  document.querySelectorAll(".but")[i].addEventListener("click",function(){
+    var buttoninner=this.innerHTML;
+     playsound(buttoninner);
+  });
+}
+document.addEventListener("keypress",function(event){
+  playsound(event.key);
+});
+function playsound(key){
+  switch (key) {
+    case "Q":
+      var piano1 = new Audio('p1.mp3');
+      piano1.play();
+      break;
+
+    case "W":
+      var piano2 = new Audio('p2.mp3');
+      piano2.play();
+      break;
+
+      case "E":
+      var piano2 = new Audio('p3.mp3');
+      piano2.play();
+      break;
+
+      case "R":
+      var piano2 = new Audio('p4.mp3');
+      piano2.play();
+      break;
+
+      case "T":
+      var piano2 = new Audio('p5.mp3');
+      piano2.play();
+      break;
+
+      case "Y":
+      var piano2 = new Audio('p6.mp3');
+      piano2.play();
+      break;
+
+      case "U":
+      var piano2 = new Audio('p7.mp3');
+      piano2.play();
+      break;
+
+      case "I":
+      var piano2 = new Audio('p8.mp3');
+      piano2.play();
+      break;
+
+    case "O":
+      var piano3 = new Audio('p9.mp3');
+      piano3.play();
+      break;
+  default: console.log(key);
+}
+}
+</script>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
